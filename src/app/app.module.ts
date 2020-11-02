@@ -21,11 +21,14 @@ import {MatTableModule} from '@angular/material/table';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 
+import { GjtComponent } from './component/gjt/gjt.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginAdmComponent
+    LoginAdmComponent,
+    GjtComponent
   ],
   imports: [
     BrowserModule,

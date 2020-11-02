@@ -42,7 +42,7 @@ export class LoginAdmComponent implements OnInit {
           res =>{
             const token = res ['token']
             this.token = token
-            // this.router.navigateByUrl('/gtec')
+            this.router.navigateByUrl('/gjt')
             if(this.token.length < 1){
               alert('El token no se ha generado correctamente')
             }else{
