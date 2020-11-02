@@ -1,3 +1,3 @@
 export const global = {
-    url: 'http://jobtec-inatec.herokuapp.com/'
+    url: 'https://jobtec-inatec.herokuapp.com/'
 }
