@@ -22,13 +22,25 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 
 import { GjtComponent } from './component/gjt/gjt.component';
+import { CmsComponent } from './component/cms/cms.component';
+import { UsersComponent } from './component/Users/users/users.component';
+import { JobComponent } from './component/Job/job/job.component';
+import { UserNewComponent } from './component/Users/user-new/user-new.component';
+import { UserEditComponent } from './component/Users/user-edit/user-edit.component';
+import { UserListComponent } from './component/Users/user-list/user-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginAdmComponent,
-    GjtComponent
+    GjtComponent,
+    CmsComponent,
+    UsersComponent,
+    JobComponent,
+    UserNewComponent,
+    UserEditComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
