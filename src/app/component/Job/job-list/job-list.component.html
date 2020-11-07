@@ -8,26 +8,26 @@
             <thead>
               <tr>
                 <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Usuario</th>
+                <th>Categoria</th>
+                <th>Descripción</th>
                 <th>Editar</th>
                 <th>Eliminar</th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let element of user | paginate: { itemsPerPage: 3, currentPage: p }">
-                <td>{{element.firstname}}</td>
-                <td>{{element.firstlastname}}</td>
-                <td>{{element.email}}</td>
+              <tr *ngFor="let element of agent | paginate: { itemsPerPage: 3, currentPage: p }">
+                <td>{{element.name}}</td>
+                <td>{{element.categoria}}</td>
+                <td>{{element.decription}}</td>
                 <td class="example-buttom-container">
-                  <button mat-fab color="primary" aria-label="Editar Usuario" matTooltip="Editar">
+                  <button mat-fab color="primary" aria-label="Editar Oferta" matTooltip="Editar">
                   <mat-icon class="cd">
                       <!-- <a [routerLink]="['/Update-User', element._id]">create</a> -->
                   </mat-icon>
                   </button>
                 </td>
                 <td>
-                  <button mat-fab color="primary" aria-label="Eliminar Usuario" matTooltip="Eliminar">
+                  <button mat-fab color="primary" aria-label="Eliminar Oferta" matTooltip="Eliminar">
                     <mat-icon class="cd">
                       <a (click)='onDeleteConfirm(element._id)'>delete</a>
                     </mat-icon>

@@ -28,6 +28,10 @@ import { JobComponent } from './component/Job/job/job.component';
 import { UserNewComponent } from './component/Users/user-new/user-new.component';
 import { UserEditComponent } from './component/Users/user-edit/user-edit.component';
 import { UserListComponent } from './component/Users/user-list/user-list.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { JobNewComponent } from './component/Job/job-new/job-new.component';
+import { JobEditComponent } from './component/Job/job-edit/job-edit.component';
+import { JobListComponent } from './component/Job/job-list/job-list.component';
 
 
 @NgModule({
@@ -40,7 +44,10 @@ import { UserListComponent } from './component/Users/user-list/user-list.compone
     JobComponent,
     UserNewComponent,
     UserEditComponent,
-    UserListComponent
+    UserListComponent,
+    JobNewComponent,
+    JobEditComponent,
+    JobListComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +67,8 @@ import { UserListComponent } from './component/Users/user-list/user-list.compone
     MatPaginatorModule,
     MatTableModule,
     MatProgressSpinnerModule,
-    MatRadioModule
+    MatRadioModule,
+    NgxPaginationModule
 
   ],
   providers: [],

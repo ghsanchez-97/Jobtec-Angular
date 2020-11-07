@@ -30,8 +30,8 @@ export class UserService {
   }
 
   register(userRegister, token){
-    const params =JSON.stringify(userRegister);
-    const header = new HttpHeaders({'Content-Typw' : 'application/json',
+    let params =JSON.stringify(userRegister);
+    let header = new HttpHeaders({'Content-Type' : 'application/json',
     'Authorization': token});
     return this.http.post(this.url+'register', params, {headers:header});
   }

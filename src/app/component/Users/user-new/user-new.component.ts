@@ -37,7 +37,6 @@ export class UserNewComponent implements OnInit {
     this.userServices.register(this.user, this.token).subscribe(
       (res:any)=>{
         this.user
-        console.log(User);
         
         if(!this.user){
           this.alertMessage = 'Error al Registar'

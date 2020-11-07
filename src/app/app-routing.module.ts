@@ -9,6 +9,10 @@ import { UserNewComponent } from './component/Users/user-new/user-new.component'
 import { UserEditComponent } from './component/Users/user-edit/user-edit.component';
 import { UserListComponent } from './component/Users/user-list/user-list.component';
 
+import { JobNewComponent } from './component/Job/job-new/job-new.component';
+import { JobEditComponent } from './component/Job/job-edit/job-edit.component';
+import { JobListComponent } from './component/Job/job-list/job-list.component';
+
 import { AuthService } from './services/auth.service'
 
 const routes: Routes = [
@@ -44,6 +48,21 @@ const routes: Routes = [
   {
     path:'jobs',
     component:JobComponent,
+    canActivate:[AuthService]
+  },
+  {
+    path:'job-new',
+    component:JobNewComponent,
+    canActivate:[AuthService]
+  },
+  {
+    path:'job-edit/:id',
+    component:JobEditComponent,
+    canActivate:[AuthService]
+  },
+  {
+    path:'jobs-list',
+    component:JobListComponent,
     canActivate:[AuthService]
   }
 ];

@@ -1,0 +1,77 @@
+ <section>
+
+    <app-gjt></app-gjt>
+
+    <body>
+        <div class="container title">
+            <div class="row tl">
+                <h1 class="col-sm ht">Nuevo Empleo</h1>
+            </div>
+
+            <div class="container formul">
+                <form class="new-jb was-validated" #Jb='ngForm' (ngSubmit)='onSubmitJb()'>
+                    <div class="form-row">
+                      <div class="form-group col-md-4">
+                        <label for="inputName">Empresa</label>
+                        <input type="text" class="form-control is-invalid" id="inputName" placeholder="Nombre de la empresa" required name="name" name="ngModel" [(ngModel)]='agent.name'>
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="inputCat">Categoria</label>
+                        <select id="inputCat" class="form-control" required name="categoria" categoria='ngModel' [(ngModel)]='agent.categoria'>
+                          <option selected value="">Categoria...</option>
+                          <option value="Administración">Administración</option>
+                          <option value="Contabilidad">Contabilidad</option>
+                          <option value="Electronica">Electronica</option>
+                          <option value="Electricidad">Electricidad</option>
+                          <option value="Computación">Computación</option>
+                          <option value="Confección">Corte y Confección</option>
+                          <option value="Cuero">Cuero y Calzado</option>
+                          <option value="Refrigeración">Refrigeración</option>
+                        </select>
+                      </div> 
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputArea">Area</label>
+                            <select id="inputArea" class="form-control" required name="area" area='ngModel' [(ngModel)]='agent.area'>
+                              <option selected value="">Area...</option>
+                              <option value="Finanza">Finanza</option>
+                              <option value="Contabilidad">Contabilidad</option>
+                              <option value="Informatica">Informatica</option>
+                              <option value="Franca">Zona Franca</option>
+                              <option value="Administración">Administración</option>
+                              <option value="Humano">Recurso Humano</option>
+                              <option value="Otro">Otro</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-4">
+                            <label for="inputdate">Horario de entrada</label>
+                            <input type="time" class="form-control" id="inputdate" placeholder="Horario" required name="time_init" time_init='ngModel' [(ngModel)]='agent.time_init'>
+                          </div>
+                          <div class="form-group col-md-4">
+                            <label for="inputdate">Horario de Salida</label>
+                            <input type="time" class="form-control" id="inputdate" placeholder="Horario" required name="time_end" time_end='ngModel' [(ngModel)]='agent.time_end'>
+                          </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputDecrip">Decripción</label>
+                      <textarea class="form-control" id="inputDecrip" placeholder="Descripción del trabajo" required name="decription" decription='ngModel' [(ngModel)]='agent.decription'></textarea>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-4">
+                        <label for="inputmony">Salario</label>
+                        <input type="number" class="form-control" id="inputmony" placeholder="C$ Salario" required name="salario" salario='ngModel' [(ngModel)]='agent.salario'>
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="inputplace">Dirección</label>
+                        <input type="text" class="form-control" id="inputplace" placeholder="Dirección" required name="lugar" lugar='ngModel' [(ngModel)]='agent.lugar'>
+                      </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Crear</button>
+                  </form>
+            </div>
+        </div>
+    </body>
+
+ </section>

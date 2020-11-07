@@ -1,48 +1,46 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validator, FormBuilder, FormGroup } from '@angular/forms';
-import { User } from '../../../models/user';
+import { Agent } from '../../../models/agent'
 import { UserService } from '../../../services/user.service';
+import { AgentService } from '../../../services/agent.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { global } from '../../../services/global';
 
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css'],
-  providers:[UserService]
+  selector: 'app-job-list',
+  templateUrl: './job-list.component.html',
+  styleUrls: ['./job-list.component.css'],
+  providers:[UserService, AgentService]
 })
-export class UserListComponent implements OnInit {
-
-  user : User;
+export class JobListComponent implements OnInit {
+  
+  agent : Agent
   token;
   url:string;
   p: number = 1;
   confirm;
 
-
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private userService: UserService
-
-  ) {
-    this.token = this.userService.getToken();
-    this.url = global.url;
-
-   }
+    private userService: UserService,
+    private agentService: AgentService
+  ) { 
+    this.token = this.userService.getToken()
+    this.url = global.url
+  }
 
   ngOnInit(): void {
-    this.getUsers();
+    this.getAgents()
   }
-  getUsers(){
+  getAgents(){
     this.route.params.forEach((params: Params) =>{
       let page = +params['page']
 
-      this.userService.getUsers(this.token, page).subscribe(
+      this.agentService.getAgents(this.token, page).subscribe(
         res =>{
   
-          if(!this.user){
-            this.router.navigateByUrl('/users');
+          if(!this.agent){
+            this.router.navigateByUrl('/jobs');
           }
         },e => {
           var errorMessage = <any>e;
@@ -65,7 +63,7 @@ export class UserListComponent implements OnInit {
   onDeleteEvent(id){
     this.userService.deleteUser(this.token, id).subscribe(
       (response:any)=>{
-        this.getUsers();
+        this.getAgents();
       },e =>{
         let errorMessage = <any>e;
         console.log(errorMessage);

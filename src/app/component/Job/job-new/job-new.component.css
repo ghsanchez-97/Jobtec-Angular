@@ -1,0 +1,25 @@
+@font-face{
+    font-family: 'Source Sans Pro Black';
+    src: url('/assets/Font/SourceSansPro-Black.otf');
+}
+.tl{
+    position: relative;
+    top: -200px;
+    width: 789px;
+}
+.ht{
+    position: absolute;
+    left: 407px;
+    top: 50px !important;
+}
+.tl h1{
+    font-family: 'Source Sans Pro Black',sans-serif;
+    -webkit-text-stroke: 5px #003782;
+    color: white;
+    text-transform: uppercase;
+    position: fixed;
+}
+.formul{
+    position: fixed;
+    top: 248px;
+}
