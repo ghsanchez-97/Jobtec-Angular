@@ -12,10 +12,25 @@ import { UserListComponent } from './component/Users/user-list/user-list.compone
 import { JobNewComponent } from './component/Job/job-new/job-new.component';
 import { JobEditComponent } from './component/Job/job-edit/job-edit.component';
 import { JobListComponent } from './component/Job/job-list/job-list.component';
+import { InitComponent } from './component/init/init.component';
+import { WhoComponent } from './component/who/who.component';
+import { ContacComponent } from './component/contac/contac.component';
 
 import { AuthService } from './services/auth.service'
 
 const routes: Routes = [
+  {
+    path:'',
+    component:InitComponent
+  },
+  {
+    path:'quienes-somos',
+    component:WhoComponent
+  },
+  {
+    path:'contacto',
+    component:ContacComponent
+  },
   {
     path:'login-adm',
     component: LoginAdmComponent

@@ -32,6 +32,11 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { JobNewComponent } from './component/Job/job-new/job-new.component';
 import { JobEditComponent } from './component/Job/job-edit/job-edit.component';
 import { JobListComponent } from './component/Job/job-list/job-list.component';
+import { InitComponent } from './component/init/init.component';
+import { WhoComponent } from './component/who/who.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { FootComponent } from './component/foot/foot.component';
+import { ContacComponent } from './component/contac/contac.component';
 
 
 @NgModule({
@@ -47,7 +52,12 @@ import { JobListComponent } from './component/Job/job-list/job-list.component';
     UserListComponent,
     JobNewComponent,
     JobEditComponent,
-    JobListComponent
+    JobListComponent,
+    InitComponent,
+    WhoComponent,
+    NavbarComponent,
+    FootComponent,
+    ContacComponent
   ],
   imports: [
     BrowserModule,
