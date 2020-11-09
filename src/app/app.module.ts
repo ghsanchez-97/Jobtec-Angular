@@ -37,6 +37,7 @@ import { WhoComponent } from './component/who/who.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { FootComponent } from './component/foot/foot.component';
 import { ContacComponent } from './component/contac/contac.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -78,7 +79,10 @@ import { ContacComponent } from './component/contac/contac.component';
     MatTableModule,
     MatProgressSpinnerModule,
     MatRadioModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AgmCoreModule.forRoot({
+      apiKey: ''
+    })
 
   ],
   providers: [],
