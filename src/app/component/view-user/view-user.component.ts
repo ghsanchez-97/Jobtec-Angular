@@ -25,7 +25,8 @@ export class ViewUserComponent implements OnInit {
     private authService: SocialAuthService, 
     private router: Router,
     private userService: UserService,
-    private agentService: AgentService
+    private agentService: AgentService,
+    private route: ActivatedRoute,
     ) { }
 
   ngOnInit(): void {
@@ -52,7 +53,7 @@ export class ViewUserComponent implements OnInit {
     this.route.params.forEach((params: Params) =>{
       let page = +params['page']
 
-      this.agentService.getAgents(this.token, page).subscribe(
+      this.agentService.getAgentsPublic(page).subscribe(
         res =>{
   
           if(!this.agent){
