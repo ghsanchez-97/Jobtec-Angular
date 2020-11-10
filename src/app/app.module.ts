@@ -37,8 +37,7 @@ import { WhoComponent } from './component/who/who.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { FootComponent } from './component/foot/foot.component';
 import { ContacComponent } from './component/contac/contac.component';
-import { AgmCoreModule } from '@agm/core';
-
+import { SignComponent } from './component/sign/sign.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +57,8 @@ import { AgmCoreModule } from '@agm/core';
     WhoComponent,
     NavbarComponent,
     FootComponent,
-    ContacComponent
+    ContacComponent,
+    SignComponent
   ],
   imports: [
     BrowserModule,
@@ -79,10 +79,7 @@ import { AgmCoreModule } from '@agm/core';
     MatTableModule,
     MatProgressSpinnerModule,
     MatRadioModule,
-    NgxPaginationModule,
-    AgmCoreModule.forRoot({
-      apiKey: ''
-    })
+    NgxPaginationModule
 
   ],
   providers: [],
