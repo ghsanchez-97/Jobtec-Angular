@@ -16,6 +16,7 @@ import { InitComponent } from './component/init/init.component';
 import { WhoComponent } from './component/who/who.component';
 import { ContacComponent } from './component/contac/contac.component';
 import { SignComponent } from './component/sign/sign.component';
+import { ViewUserComponent } from './component/view-user/view-user.component';
 
 import { AuthService } from './services/auth.service'
 
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path:'sign-in',
     component:SignComponent
+  },
+  {
+    path:'user',
+    component:ViewUserComponent
   },
   {
     path:'login-adm',

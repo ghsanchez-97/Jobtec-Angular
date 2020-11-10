@@ -1,0 +1,74 @@
+<section>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white">
+        <a class="navbar-brand" routerLink=''>
+            <img src="assets/Image/Logo/Jobtec.svg" width="200" alt="Logo de Jobtec">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+          <div class="navbar-nav text-dark">
+            <a class="nav-item nav-link text-dark" (click)='signOut()'>Salir</a>
+          </div>
+        </div>
+        <a class="navbar-brand">
+            <img src="assets/Image/Logo/descarga.png" width="150" alt="Emocion de Jobtec">
+        </a>
+      </nav>
+
+      <body>
+
+        <div class="container list-user pt-5">
+            <div class="mat-elevation-8">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Categoria</th>
+                    <th>Descripción</th>
+                    <th>Aplicar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let element of agent | paginate: { itemsPerPage: 3, currentPage: p }">
+                    <td>{{element.name}}</td>
+                    <td>{{element.categoria}}</td>
+                    <td>{{element.decription}}</td>
+                    <td class="example-buttom-container">
+                      <button mat-fab color="primary" aria-label="Editar Oferta" matTooltip="Editar">
+                      <mat-icon class="cd">
+                          <!-- <a [routerLink]="['/Update-User', element._id]">create</a> -->
+                      </mat-icon>
+                      </button>
+                    </td>
+                    <td>
+                      <button mat-fab color="primary" aria-label="Eliminar Oferta" matTooltip="Eliminar">
+                        <mat-icon class="cd">
+                          <a (click)='onDeleteConfirm(element._id)'>delete</a>
+                        </mat-icon>
+                        </button>
+                    </td>
+                    <td>
+                      <div class="secure" *ngIf="confirm == element._id">
+                        <a (click)="onDeleteEvent(element._id)" class="btn btn-sm btn-danger">
+                          Eliminar
+                        </a>
+                        <a (click)="onCancelEvent()" class="btn btn-sm btn-secondary">
+                          Cancelar
+                        </a>
+                    </div>
+      
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+
+      </body>
+
+      <app-foot></app-foot>
+
+</section>

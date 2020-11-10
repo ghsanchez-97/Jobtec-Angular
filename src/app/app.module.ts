@@ -38,6 +38,9 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { FootComponent } from './component/foot/foot.component';
 import { ContacComponent } from './component/contac/contac.component';
 import { SignComponent } from './component/sign/sign.component';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider,FacebookLoginProvider } from 'angularx-social-login';
+import { ViewUserComponent } from './component/view-user/view-user.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +61,8 @@ import { SignComponent } from './component/sign/sign.component';
     NavbarComponent,
     FootComponent,
     ContacComponent,
-    SignComponent
+    SignComponent,
+    ViewUserComponent
   ],
   imports: [
     BrowserModule,
@@ -79,10 +83,30 @@ import { SignComponent } from './component/sign/sign.component';
     MatTableModule,
     MatProgressSpinnerModule,
     MatRadioModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    SocialLoginModule
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          // {
+          //   id: GoogleLoginProvider.PROVIDER_ID,
+          //   provider: new GoogleLoginProvider(
+          //     '862030930517-l5u8isc6ahb5359q5deevr6i58kjind8.apps.googleusercontent.com'
+          //   )
+          // },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('1655244244635175')
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
