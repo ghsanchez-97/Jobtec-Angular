@@ -33,15 +33,22 @@ export class UserListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUsers();
+    console.log(this.getUsers());
+    
   }
   getUsers(){
     this.route.params.forEach((params: Params) =>{
       let page = +params['page']
 
       this.userService.getUsers(this.token, page).subscribe(
-        res =>{
+        (res:any) =>{
+
+          let user = res['user'];
+          this.user = user
+          console.log(this.user);
+          
   
-          if(!this.user){
+          if(!user){
             this.router.navigateByUrl('/users');
           }
         },e => {

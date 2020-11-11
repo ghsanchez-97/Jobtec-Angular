@@ -37,7 +37,8 @@ export class JobListComponent implements OnInit {
       let page = +params['page']
 
       this.agentService.getAgents(this.token, page).subscribe(
-        res =>{
+        (res:any) =>{
+          this.agent = !res ? [] : res.agent;
   
           if(!this.agent){
             this.router.navigateByUrl('/jobs');

@@ -61,7 +61,7 @@ const routes: Routes = [
     canActivate:[AuthService]
   },
   {
-    path:'user-edit',
+    path:'user-edit/:id',
     component:UserEditComponent,
     canActivate:[AuthService]
   },

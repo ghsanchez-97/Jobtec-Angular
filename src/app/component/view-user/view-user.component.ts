@@ -33,6 +33,9 @@ export class ViewUserComponent implements OnInit {
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);
+      this.getAgents();
+      console.log(this.getAgents());
+      
     });
 
     const fbLoginOptions = {
@@ -54,10 +57,13 @@ export class ViewUserComponent implements OnInit {
       let page = +params['page']
 
       this.agentService.getAgentsPublic(page).subscribe(
-        res =>{
+        (res:any) =>{
+          this.agent = !res ? [] : res.agent
+          console.log(this.agent);
+          
   
           if(!this.agent){
-            this.router.navigateByUrl('/jobs');
+            this.router.navigateByUrl('');
           }
         },e => {
           var errorMessage = <any>e;
