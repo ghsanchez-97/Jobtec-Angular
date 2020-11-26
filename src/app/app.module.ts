@@ -96,6 +96,12 @@ import { GoogleMapsModule } from '@angular/google-maps';
       useValue: {
         autoLogin: false,
         providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '133502586538-ojr8upnmjjod2fg0u1s6kvmv13hbo2vm.apps.googleusercontent.com'
+            )
+          },
             {
             id: FacebookLoginProvider.PROVIDER_ID,
             provider: new FacebookLoginProvider('1655244244635175')

@@ -20,10 +20,7 @@
                       <h1 class="display-4 text-center">Ubicación</h1>
                       <div class="lead">
                           <!-- <img src="assets/Image/Img/map.jpeg" class="w-100" alt="Mapa del centro"> -->
-                          <!-- <google-map></google-map> -->
-                          <div *ngIf="apiLoaded | async">
-                            <google-map [options]="options" [zoom]="zoom"></google-map>
-                          </div>
+                          <google-map [center]="center" [zoom]="zoom"></google-map>
                       </div>             
                     </div>
                 </div>

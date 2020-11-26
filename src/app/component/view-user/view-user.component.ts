@@ -30,12 +30,12 @@ export class ViewUserComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    // this.authService.authState.subscribe((user) => {
-    //   this.user = user;
-    //   this.loggedIn = (user != null);
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
       this.getAgents();
-    //   console.log(this.getAgents());
-    // });
+      console.log(this.getAgents());
+    });
   }
 
   signOut(): void {
