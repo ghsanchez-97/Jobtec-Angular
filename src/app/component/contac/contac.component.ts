@@ -12,8 +12,8 @@ export class ContacComponent implements OnInit {
 
   apiLoaded: Observable<boolean>;
   options: google.maps.MapOptions = {
-    center: {lat: 40, lng: -20},
-    zoom: 4
+    center: {lat: 11.962624573513855,lng: -86.08808952609357}, 
+    zoom: 16
   };
 
   constructor(httpClient: HttpClient) {
