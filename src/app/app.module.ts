@@ -88,7 +88,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
     NgxPaginationModule,
     SocialLoginModule,
     GoogleMapsModule,
-    HttpClientJsonpModule
+    
   ],
   providers: [
     {
@@ -96,13 +96,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
       useValue: {
         autoLogin: false,
         providers: [
-          // {
-          //   id: GoogleLoginProvider.PROVIDER_ID,
-          //   provider: new GoogleLoginProvider(
-          //     '862030930517-l5u8isc6ahb5359q5deevr6i58kjind8.apps.googleusercontent.com'
-          //   )
-          // },
-          {
+            {
             id: FacebookLoginProvider.PROVIDER_ID,
             provider: new FacebookLoginProvider('1655244244635175')
           }

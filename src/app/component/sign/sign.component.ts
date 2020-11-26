@@ -34,10 +34,17 @@ export class SignComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.loggedIn = (user != null);
-      this.router.navigateByUrl('/user')
+      if(user != null){
+        this.user = user;
+        this.loggedIn = (user != null);
+        this.router.navigateByUrl('/user')
+      }else{
+        
+        console.log('Error al iniciar');
+      }
+      
     });
+    
   }
 
 }

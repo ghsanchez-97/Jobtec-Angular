@@ -26,7 +26,6 @@ export class ContacComponent implements OnInit {
 
   ngOnInit(): void {
     
-    
   }
   
 

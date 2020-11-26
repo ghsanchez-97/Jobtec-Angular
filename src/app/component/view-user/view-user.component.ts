@@ -30,21 +30,12 @@ export class ViewUserComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.loggedIn = (user != null);
+    // this.authService.authState.subscribe((user) => {
+    //   this.user = user;
+    //   this.loggedIn = (user != null);
       this.getAgents();
-      console.log(this.getAgents());
-      
-    });
-
-    const fbLoginOptions = {
-      scope: 'pages_messaging,pages_messaging_subscriptions,email,pages_show_list,manage_pages',
-      return_scopes: true,
-      enable_profile_selector: true
-    };
-
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID, fbLoginOptions)
+    //   console.log(this.getAgents());
+    // });
   }
 
   signOut(): void {
