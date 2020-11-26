@@ -10,7 +10,7 @@
                     <div class="container">
                       <h1 class="display-4 text-center">Contactanos</h1>
                       <h3 class="text-center">Telefono</h3>
-                      <p class="lead text-center">(505) 2522-0530</p>
+                      <p class="lead text-center">(505) 2523 0530</p>
                       <h3 class="text-center">Dirección</h3>
                       <p class="lead text-center">De la cuatro esquina de Monimbó 500mtr al sur, Masaya</p>
                     </div>
@@ -18,9 +18,13 @@
                 <div class="jumbotron jumbotron-fluid col ">
                     <div class="container">
                       <h1 class="display-4 text-center">Ubicación</h1>
-                      <p class="lead">
-                          <img src="assets/Image/Img/map.jpeg" class="w-100" alt="Mapa del centro">
-                      </p>             
+                      <div class="lead">
+                          <!-- <img src="assets/Image/Img/map.jpeg" class="w-100" alt="Mapa del centro"> -->
+                          <!-- <google-map></google-map> -->
+                          <div *ngIf="apiLoaded | async">
+                            <google-map [options]="options" [zoom]="zoom"></google-map>
+                          </div>
+                      </div>             
                     </div>
                 </div>
             </div>

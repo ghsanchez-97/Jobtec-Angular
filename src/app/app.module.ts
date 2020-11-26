@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http'
 import { LoginAdmComponent } from './component/login-adm/login-adm.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -41,6 +41,8 @@ import { SignComponent } from './component/sign/sign.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider,FacebookLoginProvider } from 'angularx-social-login';
 import { ViewUserComponent } from './component/view-user/view-user.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+
 
 @NgModule({
   declarations: [
@@ -84,8 +86,9 @@ import { ViewUserComponent } from './component/view-user/view-user.component';
     MatProgressSpinnerModule,
     MatRadioModule,
     NgxPaginationModule,
-    SocialLoginModule
-
+    SocialLoginModule,
+    GoogleMapsModule,
+    HttpClientJsonpModule
   ],
   providers: [
     {
